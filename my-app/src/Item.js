@@ -21,9 +21,11 @@ class Item extends Component {
   render() {
     return (
       <div style = {flexContainer} onClick={this.selectItem}>
+      {/*
       <div style = {flexItem}>
         <h2>{this.props.data["dininghall"]}</h2>
       </div>
+      */}
       <div style = {flexItem}>
         {this.props.data["foodname"]}
       </div>

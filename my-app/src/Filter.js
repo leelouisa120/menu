@@ -7,21 +7,39 @@ const flexContainer = {
   justifyContent: 'space-between',
   alignItems: 'baseline'
 };
-
+// Where to store the data
+function nextPage(event){
+  {/* Get form data
+   Make sure that this data is not modified and is accessed before its written*/}
+  window.data = new FormData(event.target.parentNode);
+}
 
 class Filter extends Component {
-    render() {
+  render() {
 
-      return (
-        <div>
+    return (
+      <div>
         <div style={flexContainer}>
-          <h1> DINNER TIME</h1>
-          <a href="/#/choices">Take me to choices!</a>
+          <h1>
+            DINNER TIME
+          </h1>
         </div>
 
-        </div>
-      );
-    }
+        <form>
+          <input type="checkbox" name="constraint" value="vegetarian"/>
+          Vegetarian
+          <input type="checkbox" name="constraint" value="halal"/>
+          Halal
+          <input type="checkbox" name="constraint" value="vegan"/>
+          Vegan
+
+          <a href="/#/choices" onClick={nextPage}>
+            Take me to choices!
+          </a>
+        </form>
+      </div>
+    );
+  }
 }
 
 export default Filter;

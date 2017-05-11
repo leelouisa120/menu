@@ -1,25 +1,29 @@
-const data = [
-  {
-    "id": 0,
-    "dininghall": "Sargent",
-    "foodname": "Whole Green Beans",
-    "meal": "dinner",
-    "special": ["vegetarian","vegan"],
-  },
-  {
-    "id": 1,
-    "dininghall": "Plex East",
-    "foodname": "Stir Fry",
-    "meal": "dinner",
-    "special": ["vegetarian","vegan"],
-  },
-  {
-    "id": 2,
-    "dininghall": "Sargent",
-    "foodname": "Chicken Nuggets",
-    "meal": "lunch",
-    "special":["chicken"] ,
-  }
-]
+const data = {
+  "Sargent": [
+    {
+      "foodname": "Whole Green Beans",
+      "meal": "dinner",
+      "constraint": ["vegetarian","vegan"],
+    },
+    {
+      "foodname": "Hummus",
+      "meal": "dinner",
+      "constraint": ["vegetarian","vegan"],
+    },
+    {
+      "foodname": "Chicken Nuggets",
+      "meal": "dinner",
+      "constraint":["chicken"] ,
+    },
+  ],
+  "Plex East":[
+    {
+      "foodname": "Stir Fry",
+      "meal": "dinner",
+      "constraint": ["vegetarian","vegan"],
+    },
+  ]
+
+}
 
 export {data};
