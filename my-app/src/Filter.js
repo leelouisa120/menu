@@ -56,24 +56,23 @@ window.onload=function(){
   setInterval(GetClock,1000);
 }
 
-function getInitialState(event){
-  return {hover:false}
-}
-function toggleOver(event){
-  this.setState({hover: !this.state.hover})
-}
-
 class Filter extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+        hover: false
+    };
+  }
+  toggleHover = () => {
+    this.setState({hover: !this.state.hover});
+  }
   render() {
-    {/*}{getInitialState};
-    {toggleOver};
     var linkStyle;
-    if (this.state.hover){
-      linkStyle = {backgroundColor: 'red'}
+    if (this.state.hover) {
+      linkStyle = {backgroundColor: '#ffa190'}
+    } else {
+      linkStyle = {backgroundColor: 'tomato'}
     }
-    else {
-      linkStyle = {backgroundColor: 'blue'}
-    }*/}
     return (
       <div>
 
@@ -92,17 +91,26 @@ class Filter extends Component {
                 Vegetarian
               </div>
               <div style={{...flexItem, color:'black', fontSize: '2em'}} className="input-group">
-                <input type="checkbox" name="constraint" value="halal"/>
-                Halal
-              </div>
-              <div style={{...flexItem, color:'black', fontSize: '2em'}} className="input-group">
                 <input type="checkbox" name="constraint" value="vegan"/>
                 Vegan
               </div>
+              <div style={{...flexItem, color:'black', fontSize: '2em'}} className="input-group">
+                <input type="checkbox" name="constraint" value="halal"/>
+                Halal
+              </div>
+              <div style={{...flexItem, color: 'black', fontSize: '2em'}} className="input-group">
+                <input type="checkbox" name="constraint" value="meat"/>
+                Meat
+              </div>
+
+              <div style={{...flexItem, color: 'black', fontSize: '2em'}} className="input-group">
+                <input type="checkbox" name="constraint" value="fish"/>
+                Fish
+              </div>
           </div>
 
-          <div style={{...flexContainer, alignItems: 'center'}}>
-            <a href="/#/choices" onClick={nextPage} style={flexItem} >
+          <div style={{...flexContainer, alignItems: 'center',...linkStyle}} onMouseEnter={this.toggleHover} onMouseLeave={this.toggleHover}>
+            <a href="/#/choices" style={{...flexItem, textDecoration: 'none'}} onClick={nextPage}>
               Take me to choices!
             </a>
           </div>
