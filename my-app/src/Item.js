@@ -14,13 +14,11 @@ const flexItem = {
 
 
 class Item extends Component {
-  selectItem = () => {
-      alert('Eat at ' + this.props.data["dininghall"] + ' !');
-    }
+
 
   render() {
     return (
-      <div style = {flexContainer} onClick={this.selectItem}>
+      <div style = {flexContainer}>
       {/*
       <div style = {flexItem}>
         <h2>{this.props.data["dininghall"]}</h2>
